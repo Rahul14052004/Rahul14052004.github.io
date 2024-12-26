@@ -5,7 +5,7 @@
     box-sizing: border-box;
 }
 
-/* Body and Main Section Styling */
+/* Body Styling */
 body {
     font-family: 'Poppins', sans-serif;
     background-color: #f4f7fa;
@@ -15,25 +15,68 @@ body {
     padding: 0;
 }
 
-/* Header Styling */
+/* Header Section */
 header {
     background: linear-gradient(135deg, #1e3c72, #2a5298);
     color: white;
     text-align: center;
-    padding: 80px 30px;
+    padding: 80px 20px;
 }
 
 header h1 {
     font-size: 3em;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
 header p {
-    font-size: 1.2em;
+    font-size: 1.1em;
     opacity: 0.9;
 }
 
-/* Project Detail Section */
+/* INDEX PAGE - Vertical Layout */
+.index-layout {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 40px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+}
+
+.index-layout ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.index-layout ul li {
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.index-layout ul li:hover {
+    transform: translateY(-10px);
+}
+
+.index-layout ul li a {
+    font-size: 1.4em;
+    color: #333;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.index-layout ul li p {
+    font-size: 1em;
+    margin-top: 10px;
+    color: #666;
+}
+
+/* Project Detail Styling (Unchanged for Project Pages) */
 .project-detail {
     max-width: 1000px;
     margin: 60px auto;
@@ -51,53 +94,7 @@ header p {
     padding-bottom: 8px;
 }
 
-/* Technologies Section as Cards */
-ul {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    list-style: none;
-    justify-content: flex-start;
-}
-
-ul li {
-    background: #f8f8f8;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-    flex: 1 1 calc(30% - 20px);
-    text-align: center;
-    transition: transform 0.3s ease;
-}
-
-ul li:hover {
-    transform: translateY(-8px);
-}
-
-/* Table Styling */
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-}
-
-table th, table td {
-    padding: 15px;
-    text-align: center;
-    border-bottom: 1px solid #ddd;
-}
-
-table th {
-    background-color: #2a5298;
-    color: white;
-    font-size: 1.1em;
-}
-
-table tr:nth-child(even) {
-    background-color: #f9f9f9;
-}
-
-/* Footer Styling */
+/* Footer */
 footer {
     text-align: center;
     padding: 40px 20px;
