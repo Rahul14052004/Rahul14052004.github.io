@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Genre Classification | Project</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    <header>
+        <h1>🎵 Music Genre Classification</h1>
+        <p>Automating music classification using machine learning and deep learning techniques.</p>
+    </header>
+
+    <section class="project-detail">
+        <h2>Overview</h2>
+        <p>
+            This project focuses on developing a machine learning model to classify music into genres using audio features and spectrogram analysis. 
+            The goal is to assist with playlist generation, content organization, and music analysis for industry applications.
+        </p>
+
+        <h2>Motivation</h2>
+        <p>
+            With the rise of streaming platforms and vast music libraries, automatic music classification plays a crucial role in improving 
+            user experience by categorizing songs efficiently. This classifier could streamline radio stations, aid in music licensing, 
+            and provide insights for music producers and DJs.
+        </p>
+
+        <h2>Dataset</h2>
+        <p>
+            We used the <strong>GTZAN Genre Collection</strong>, a popular dataset comprising 10 genres (rock, classical, jazz, etc.), 
+            with 100 audio samples per genre. Each sample is 30 seconds long.
+        </p>
+
+        <h2>Technologies Used</h2>
+        <ul>
+            <li>Python</li>
+            <li>TensorFlow/Keras</li>
+            <li>Scikit-learn</li>
+            <li>Librosa (audio processing)</li>
+            <li>Mel-Spectrograms and MFCCs</li>
+        </ul>
+
+        <h2>Models Implemented</h2>
+        <ul>
+            <li><strong>K-Nearest Neighbors (KNN):</strong> Simple and intuitive, but limited accuracy (67%).</li>
+            <li><strong>Logistic Regression:</strong> Provides baseline accuracy of 66%.</li>
+            <li><strong>Decision Trees:</strong> Accuracy of 53%, prone to overfitting.</li>
+            <li><strong>Convolutional Neural Networks (CNN):</strong> Achieved 86% accuracy by processing mel-spectrograms.</li>
+            <li><strong>RCNN (Recurrent CNN):</strong> The most effective model, with an accuracy of 89%&#8203;:contentReference[oaicite:0]{index=0}.</li>
+        </ul>
+
+        <h2>Results</h2>
+        <table>
+            <tr>
+                <th>Model</th>
+                <th>Accuracy</th>
+            </tr>
+            <tr>
+                <td>Decision Tree</td>
+                <td>53%</td>
+            </tr>
+            <tr>
+                <td>Logistic Regression</td>
+                <td>66%</td>
+            </tr>
+            <tr>
+                <td>KNN</td>
+                <td>67%</td>
+            </tr>
+            <tr>
+                <td>CNN</td>
+                <td>86%</td>
+            </tr>
+            <tr>
+                <td><strong>RCNN</strong></td>
+                <td><strong>89%</strong></td>
+            </tr>
+        </table>
+
+        <h2>Model Performance Visuals</h2>
+        <img src="../assets/img/confusion-matrix-cnn.png" alt="CNN Confusion Matrix" width="600px">
+        <p><i>Confusion matrix for CNN model performance across genres.</i></p>
+
+        <img src="../assets/img/training-accuracy.png" alt="Training vs Validation Accuracy" width="600px">
+        <p><i>Training accuracy vs validation accuracy over 12 epochs for CNN&#8203;:contentReference[oaicite:1]{index=1}.</i></p>
+
+        <h2>Challenges and Learning</h2>
+        <p>
+            One of the key challenges in this project was dealing with overlapping genres and ambiguous audio signals. 
+            By leveraging convolutional neural networks and recurrent layers, we enhanced the classifier’s ability to capture temporal and 
+            spectral dependencies, improving performance significantly.
+        </p>
+
+        <h2>GitHub Link</h2>
+        <p>
+            View the full project on GitHub:  
+            <a href="https://github.com/MehulAg20/Music_Genre_Classifier" target="_blank">Music Genre Classifier Repository</a>
+        </p>
+    </section>
+
+    <footer>
+        <p><a href="../index.html">Back to Home</a></p>
+    </footer>
+</body>
+</html>
