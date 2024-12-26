@@ -1,69 +1,131 @@
-body {
-    font-family: 'Arial', sans-serif;
+* {
     margin: 0;
     padding: 0;
-    color: #333;
-    background-color: #f4f4f4;
+    box-sizing: border-box;
 }
 
+/* Body Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    background-color: #f0f4f8;
+    color: #333;
+    padding: 0;
+}
+
+/* Header Section */
 header {
-    background-color: #4A90E2;
+    background: linear-gradient(135deg, #6e8efb, #88d3ce);
     color: white;
     text-align: center;
-    padding: 50px 0;
+    padding: 100px 30px;
 }
 
 header h1 {
-    margin: 0;
-    font-size: 2.8em;
+    font-size: 3.5em;
+    margin-bottom: 10px;
 }
 
 header p {
     font-size: 1.2em;
 }
 
-section {
-    max-width: 900px;
-    margin: 40px auto;
-    padding: 30px;
+/* About Section */
+.about, .projects {
+    max-width: 1100px;
+    margin: 50px auto;
+    padding: 40px;
     background: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
 
-section h2 {
-    color: #4A90E2;
-    font-size: 2em;
+.about h2, .projects h2 {
+    font-size: 2.5em;
+    color: #4a90e2;
     margin-bottom: 20px;
+    text-align: center;
 }
 
+.about p {
+    font-size: 1.1em;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Project List Styling */
 ul {
     list-style: none;
-    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
 }
 
 ul li {
-    margin-bottom: 25px;
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+ul li:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
 }
 
 ul li a {
+    display: block;
+    padding: 30px;
     color: #333;
-    text-decoration: none;
+    font-size: 1.4em;
     font-weight: bold;
-    font-size: 1.1em;
+    text-decoration: none;
 }
 
-ul li a:hover {
-    color: #4A90E2;
+ul li p {
+    padding: 0 30px 30px;
+    font-size: 1em;
+    color: #555;
 }
 
+/* Footer Styling */
 footer {
     text-align: center;
-    margin: 40px 0;
+    padding: 40px 20px;
     color: #666;
+    background: #333;
+    color: white;
 }
 
 footer a {
-    color: #4A90E2;
+    color: #6e8efb;
     text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.5em;
+    }
+
+    header p {
+        font-size: 1em;
+    }
+
+    .about, .projects {
+        margin: 30px 15px;
+        padding: 20px;
+    }
+
+    ul li {
+        max-width: 100%;
+    }
 }
