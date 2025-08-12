@@ -1,113 +1,164 @@
-/* General Reset */
-* {
-    margin: 0;
-    padding: 0;
+/*==========================================================
+  Theme Variables
+==========================================================*/
+:root {
+    --font-family-primary: 'Poppins', sans-serif;
+    --color-primary: #1e3c72;
+    --color-secondary: #2a5298;
+    --color-accent: #88d3ce;
+    --color-text-dark: #333;
+    --color-text-light: #666;
+    --color-background-light: #f4f7fa;
+    --color-background-white: #fff;
+    --spacing-base: 20px;
+    --box-shadow-small: 0 4px 15px rgba(0, 0, 0, 0.05);
+    --box-shadow-large: 0 8px 30px rgba(0, 0, 0, 0.1);
+    --border-radius-base: 12px;
+  }
+  
+  /*==========================================================
+    Base & Typography
+  ==========================================================*/
+  *,
+  *::before,
+  *::after {
     box-sizing: border-box;
-}
-
-/* Body Styling */
-body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #f4f7fa;
-    color: #333;
-    line-height: 1.8;
     margin: 0;
     padding: 0;
-}
-
-/* Header Section */
-header {
-    background: linear-gradient(135deg, #1e3c72, #2a5298);
-    color: white;
+  }
+  
+  body {
+    font-family: var(--font-family-primary);
+    background-color: var(--color-background-light);
+    color: var(--color-text-dark);
+    line-height: 1.6;
+  }
+  
+  h1, h2, h3 {
+    line-height: 1.2;
+  }
+  
+  h1 {
+    font-size: clamp(2.5rem, 5vw, 3rem);
+  }
+  
+  h2 {
+    font-size: clamp(1.8rem, 4vw, 2.2rem);
+  }
+  
+  a {
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+    color: var(--color-accent);
+  }
+  
+  /*==========================================================
+    Layout
+  ==========================================================*/
+  .container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-base);
+  }
+  
+  .section {
+    padding: calc(var(--spacing-base) * 2) 0;
+  }
+  
+  /*==========================================================
+    Header
+  ==========================================================*/
+  .header {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    color: var(--color-background-white);
     text-align: center;
-    padding: 80px 20px;
-}
-
-header h1 {
-    font-size: 3em;
-    margin-bottom: 10px;
-}
-
-header p {
+    padding: calc(var(--spacing-base) * 4) var(--spacing-base);
+  }
+  
+  .header__subtitle {
     font-size: 1.1em;
     opacity: 0.9;
-}
-
-/* INDEX PAGE - Vertical Layout */
-.index-layout {
+    margin-top: 10px;
+  }
+  
+  /*==========================================================
+    Index Page & Project List
+  ==========================================================*/
+  .layout--index {
     max-width: 800px;
-    margin: 50px auto;
-    padding: 40px;
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
-}
-
-.index-layout ul {
+    margin: calc(var(--spacing-base) * 2.5) auto;
+    padding: calc(var(--spacing-base) * 2);
+    background: var(--color-background-white);
+    border-radius: var(--border-radius-base);
+    box-shadow: var(--box-shadow-large);
+  }
+  
+  .project-list {
     list-style: none;
-    padding: 0;
     display: flex;
     flex-direction: column;
-    gap: 30px;
-}
-
-.index-layout ul li {
-    background: #fff;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    gap: calc(var(--spacing-base) * 1.5);
+  }
+  
+  .project-list__item {
+    background: var(--color-background-white);
+    padding: calc(var(--spacing-base) * 1.5);
+    border-radius: var(--border-radius-base);
+    box-shadow: var(--box-shadow-small);
     transition: transform 0.3s ease;
-}
-
-.index-layout ul li:hover {
+  }
+  
+  .project-list__item:hover {
     transform: translateY(-10px);
-}
-
-.index-layout ul li a {
+  }
+  
+  .project-list__link {
     font-size: 1.4em;
-    color: #333;
+    color: var(--color-text-dark);
     font-weight: bold;
-    text-decoration: none;
-}
-
-.index-layout ul li p {
+  }
+  
+  .project-list__description {
     font-size: 1em;
     margin-top: 10px;
-    color: #666;
-}
-
-/* Project Detail Styling (Unchanged for Project Pages) */
-.project-detail {
+    color: var(--color-text-light);
+  }
+  
+  /*==========================================================
+    Project Detail Page
+  ==========================================================*/
+  .project-detail {
     max-width: 1000px;
-    margin: 60px auto;
-    padding: 40px;
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
-}
-
-.project-detail h2 {
-    font-size: 2.2em;
-    margin-bottom: 25px;
-    color: #2a5298;
+    margin: calc(var(--spacing-base) * 3) auto;
+    padding: calc(var(--spacing-base) * 2);
+    background: var(--color-background-white);
+    border-radius: var(--border-radius-base);
+    box-shadow: var(--box-shadow-large);
+  }
+  
+  .project-detail__title {
+    color: var(--color-secondary);
     border-bottom: 2px solid #ddd;
     padding-bottom: 8px;
-}
-
-/* Footer */
-footer {
+    margin-bottom: var(--spacing-base);
+  }
+  
+  /*==========================================================
+    Footer
+  ==========================================================*/
+  .footer {
     text-align: center;
-    padding: 40px 20px;
-    color: #fff;
-    background: #1e3c72;
-}
-
-footer a {
-    color: #88d3ce;
-    text-decoration: none;
+    padding: calc(var(--spacing-base) * 2) var(--spacing-base);
+    color: var(--color-background-white);
+    background: var(--color-primary);
+  }
+  
+  .footer__link {
+    color: var(--color-accent);
     font-size: 1.1em;
-}
-
-footer a:hover {
-    text-decoration: underline;
-}
+  }
