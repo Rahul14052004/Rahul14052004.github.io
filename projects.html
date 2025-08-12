@@ -3,44 +3,121 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects | Sumeet Omalur</title>
+    <title>Projects | Rahul Ramesh Omalur</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
     <header>
-        <h1>My Projects</h1>
+        <div class="container">
+            <h1>My Projects</h1>
+            <p>A comprehensive showcase of my technical work and contributions</p>
+            <nav class="main-nav">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="projects.html" class="nav-link active">Projects</a>
+                <a href="hobbies.html" class="nav-link">Hobbies</a>
+                <a href="resume.html" class="nav-link">Resume</a>
+            </nav>
+        </div>
     </header>
 
-    <section id="icm">
-        <h2>🎵 Indian Classical Music Transcription</h2>
-        <p>
-            This project aims to develop a real-time transcription app for Indian vocalists and instrumentalists. 
-            It listens to live performances and converts them into sargam notation using advanced CRNN models, gamaka detection, and tala alignment.
-        </p>
-        <p><b>Technologies:</b> Python, TensorFlow, CRNN, Signal Processing</p>
-        <p><b>Goal:</b> Real-time transcription with fine-grained swara detection and SSL improvements.</p>
-    </section>
+    <main class="container">
+        <section class="projects-grid">
+            <div class="project-card">
+                <h2>🎵 Indian Classical Music Transcription</h2>
+                <p>
+                    This project aims to develop a real-time transcription app for Indian vocalists and instrumentalists. 
+                    It listens to live performances and converts them into sargam notation using advanced CRNN models, gamaka detection, and tala alignment.
+                </p>
+                <p><b>Technologies:</b> Python, TensorFlow, CRNN, Signal Processing</p>
+                <p><b>Goal:</b> Real-time transcription with fine-grained swara detection and SSL improvements.</p>
+            </div>
 
-    <section id="cryoet">
-        <h2>🔬 CryoET Particle Detection</h2>
-        <p>
-            This Kaggle competition project involves detecting particles in tomograms using deep learning pipelines. 
-            The goal is to improve accuracy in locating and classifying CryoET particles.
-        </p>
-        <p><b>Technologies:</b> PyTorch, CNN, Kaggle API</p>
-    </section>
+            <div class="project-card">
+                <h2>🔬 CryoET Particle Detection</h2>
+                <p>
+                    This Kaggle competition project involves detecting particles in tomograms using deep learning pipelines. 
+                    The goal is to improve accuracy in locating and classifying CryoET particles through advanced computer vision techniques.
+                </p>
+                <p><b>Technologies:</b> PyTorch, CNN, Kaggle API, Computer Vision</p>
+                <p><b>Achievement:</b> Implemented state-of-the-art detection algorithms for biological imaging.</p>
+            </div>
 
-    <section id="ml">
-        <h2>🤖 Monster Disease Classification</h2>
-        <p>
-            This project involves creating an agent to classify and diagnose synthetic monster diseases based on vitamin levels, 
-            applying ML techniques for feature analysis and decision-making.
-        </p>
-        <p><b>Technologies:</b> Python, Scikit-Learn</p>
-    </section>
+            <div class="project-card">
+                <h2>🤖 Monster Disease Classification</h2>
+                <p>
+                    This project involves creating an agent to classify and diagnose synthetic monster diseases based on vitamin levels, 
+                    applying ML techniques for feature analysis and decision-making in a controlled environment.
+                </p>
+                <p><b>Technologies:</b> Python, Scikit-Learn, Feature Engineering</p>
+                <p><b>Focus:</b> Advanced classification algorithms and model optimization techniques.</p>
+            </div>
+
+            <div class="project-card">
+                <h2>⚽ Premier Insights</h2>
+                <p>
+                    Machine learning project predicting Premier League outcomes and standings using advanced statistical models and data analysis.
+                    Incorporates player statistics, team performance metrics, and historical data for accurate predictions.
+                </p>
+                <p><b>Technologies:</b> Python, Pandas, Scikit-Learn, Data Visualization</p>
+                <p><b>Achievement:</b> High accuracy in match outcome predictions and season standings.</p>
+            </div>
+
+            <div class="project-card">
+                <h2>🎵 Music Genre Classification</h2>
+                <p>
+                    Classifying music genres using CNN, CRNN, and machine learning techniques with high accuracy performance metrics.
+                    Processes audio features and spectrograms for robust genre identification.
+                </p>
+                <p><b>Technologies:</b> Python, TensorFlow, CNN, CRNN, Audio Processing</p>
+                <p><b>Results:</b> Achieved excellent classification accuracy across multiple music genres.</p>
+            </div>
+
+            <div class="project-card">
+                <h2>🎮 Stick Hero (JavaFX)</h2>
+                <p>
+                    A JavaFX recreation of the popular mobile game 'Stick Hero' for PC with enhanced graphics and gameplay mechanics.
+                    Features improved user interface, scoring system, and smooth animations.
+                </p>
+                <p><b>Technologies:</b> Java, JavaFX, Game Development, Object-Oriented Programming</p>
+                <p><b>Features:</b> Enhanced graphics, smooth gameplay, and intuitive controls.</p>
+            </div>
+
+            <div class="project-card">
+                <h2>🛒 Online Gaming Retail Store</h2>
+                <p>
+                    An e-commerce platform for gaming products using Flask and DBMS with complete inventory management system.
+                    Includes user authentication, product catalog, shopping cart, and order processing.
+                </p>
+                <p><b>Technologies:</b> Python, Flask, SQLite, HTML/CSS, Database Management</p>
+                <p><b>Features:</b> Full e-commerce functionality with robust backend systems.</p>
+            </div>
+
+            <div class="project-card">
+                <h2>🎬 TMDB Movie Database</h2>
+                <p>
+                    Python application utilizing TMDB API to fetch and display movie details with intuitive user interface design.
+                    Provides comprehensive movie information, ratings, and recommendations.
+                </p>
+                <p><b>Technologies:</b> Python, API Integration, GUI Development, Data Processing</p>
+                <p><b>Features:</b> Real-time movie data, search functionality, and detailed movie profiles.</p>
+            </div>
+        </section>
+    </main>
 
     <footer>
-        <p><a href="index.html">Back to Home</a></p>
+        <div class="container">
+            <div class="footer-content">
+                <p>Contact me at <a href="mailto:rahul22392@iiitd.ac.in" class="footer__link">rahul22392@iiitd.ac.in</a></p>
+                <div class="social-links">
+                    <a href="https://github.com/Rahul14052004" target="_blank" class="footer__link">GitHub</a>
+                    <a href="https://linkedin.com/in/rahul-ramesh-omalur" target="_blank" class="footer__link">LinkedIn</a>
+                </div>
+                <p><a href="index.html" class="footer__link">← Back to Home</a></p>
+            </div>
+        </div>
     </footer>
 </body>
 </html>

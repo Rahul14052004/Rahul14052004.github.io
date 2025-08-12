@@ -4,50 +4,68 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rahul Ramesh Omalur | Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
     <header>
-        <h1>Rahul Ramesh Omalur</h1>
-        <p>CSAI Undergraduate | Passionate about ML, Music, Sports, and Movies</p>
+        <div class="container">
+            <h1>Rahul Ramesh Omalur</h1>
+            <p>CSAI Undergraduate | Passionate about ML, Music, Sports, and Movies</p>
+            <nav class="main-nav">
+                <a href="index.html" class="nav-link active">Home</a>
+                <a href="projects.html" class="nav-link">Projects</a>
+                <a href="hobbies.html" class="nav-link">Hobbies</a>
+                <a href="resume.html" class="nav-link">Resume</a>
+            </nav>
+        </div>
     </header>
 
-    <section class="index-layout about">
-        <h2>About Me</h2>
-        <p>
-            I enjoy building machine learning models, developing applications, and exploring how technology intersects 
-            with my interests in music, sports, and movies.
-        </p>
-    </section>
+    <main class="container">
+        <section class="index-layout about">
+            <h2>About Me</h2>
+            <p>
+                I enjoy building machine learning models, developing applications, and exploring how technology intersects 
+                with my interests in music, sports, and movies. My work spans across various domains including artificial 
+                intelligence, data science, and software development.
+            </p>
+            <p>
+                Currently pursuing my undergraduate degree in Computer Science and Artificial Intelligence, I'm passionate 
+                about creating innovative solutions and exploring the endless possibilities that technology offers.
+            </p>
+        </section>
 
-    <section class="index-layout projects">
-        <h2>Projects</h2>
-        <ul>
-            <li>
-                <a href="projects/premier-insights.html">⚽ Premier Insights</a>
-                <p>Machine learning project predicting Premier League outcomes and standings.</p>
-            </li>
-            <li>
-                <a href="projects/music-genre-classification.html">🎵 Music Genre Classification</a>
-                <p>Classifying music genres using CNN, CRNN, and machine learning techniques.</p>
-            </li>
-            <li>
-                <a href="projects/stick-hero.html">🎮 Stick Hero (JavaFX)</a>
-                <p>A JavaFX recreation of the popular mobile game 'Stick Hero' for PC.</p>
-            </li>
-            <li>
-                <a href="projects/online-gaming-store.html">🛒 Online Gaming Retail Store</a>
-                <p>An e-commerce platform for gaming products using Flask and DBMS.</p>
-            </li>
-            <li>
-                <a href="projects/tmdb-movie-database.html">🎬 TMDB Movie Database</a>
-                <p>Python application utilizing TMDB API to fetch and display movie details.</p>
-            </li>
-        </ul>
-    </section>
+        <section class="index-layout quick-links">
+            <h2>Quick Navigation</h2>
+            <div class="quick-links-grid">
+                <a href="projects.html" class="quick-link-card">
+                    <h3>🚀 Projects</h3>
+                    <p>Explore my technical projects and contributions</p>
+                </a>
+                <a href="hobbies.html" class="quick-link-card">
+                    <h3>🎯 Hobbies</h3>
+                    <p>Discover my interests beyond coding</p>
+                </a>
+                <a href="resume.html" class="quick-link-card">
+                    <h3>📄 Resume</h3>
+                    <p>View my professional background and experience</p>
+                </a>
+            </div>
+        </section>
+    </main>
 
     <footer>
-        <p>Contact me at <a href="mailto:rahul22392@iiitd.ac.in">rahul22392@iiitd.ac.in</a></p>
+        <div class="container">
+            <div class="footer-content">
+                <p>Contact me at <a href="mailto:rahul22392@iiitd.ac.in" class="footer__link">rahul22392@iiitd.ac.in</a></p>
+                <div class="social-links">
+                    <a href="https://github.com/Rahul14052004" target="_blank" class="footer__link">GitHub</a>
+                    <a href="https://linkedin.com/in/rahul-ramesh-omalur" target="_blank" class="footer__link">LinkedIn</a>
+                </div>
+            </div>
+        </div>
     </footer>
 </body>
 </html>
