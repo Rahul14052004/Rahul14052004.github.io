@@ -8,6 +8,17 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        /* Make entire card clickable */
+        .project-card {
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -25,7 +36,8 @@
 
     <main class="container">
         <section class="projects-grid">
-            <div class="project-card">
+
+            <div class="project-card" onclick="location.href='projects/quadra.html'">
                 <h2>🗣️ QUADRA : A Counterspeech Generation Model</h2>
                 <p>
                     Co-developed QUADRA, an intent-conditioned counterspeech generation framework leveraging HateBERT and BART for controlled response generation. 
@@ -33,10 +45,9 @@
                     QUADRA achieved superior performance compared to DialoGPT and GPS baselines across multiple NLP metrics.
                 </p>
                 <p><b>Technologies & Skills:</b> Large Language Models (LLM), Fine-Tuning, Hugging Face, NLP</p>
-                <p><a href="https://github.com/NLP-2025/NLP-Project-CounterSpeech" target="_blank">GitHub Repository</a> | <a href="assets/documents/QUADRA_paper.pdf" target="_blank">Project Report (PDF)</a></p>
             </div>
 
-            <div class="project-card">
+            <div class="project-card" onclick="location.href='projects/smartreachai.html'">
                 <h2>📧 SmartReachAI</h2>
                 <p>
                     Developed an AI-driven email automation platform integrating Mistral, Gemma, and a custom Spam Transformer in a RAG framework (PyTorch + Hugging Face) to enable spam-compliant, personalized communications under DPDP Act guidelines. 
@@ -44,10 +55,9 @@
                     Implemented Celery for scheduling, Redis for caching, and a modern Next.js frontend for analytics visualization.
                 </p>
                 <p><b>Technologies & Skills:</b> Django, Next.js, LLMs, RAG, Agile Project Management, XGBoost, Performance Dashboards</p>
-                <p><a href="https://github.com/SDOS-2025/SmartReach-AI" target="_blank">GitHub Repository</a></p>
             </div>
 
-            <div class="project-card">
+            <div class="project-card" onclick="location.href='projects/premier-insights.html'">
                 <h2>⚽ PremierInsights : An ML Aided Sports Prediction System</h2>
                 <p>
                     Built a sports prediction system for the English Premier League (EPL) applying machine learning techniques to predict match outcomes and league standings. 
@@ -55,10 +65,9 @@
                     Delivered accurate and reliable predictions valuable for fans, analysts, and content creators.
                 </p>
                 <p><b>Technologies & Skills:</b> Python, XGBoost, Gradient Boosting, MLP, Data Analytics</p>
-                <p><a href="https://github.com/ML-Project-PremierInsights/ELO-Insights" target="_blank">GitHub Repository</a> | <a href="assets/documents/PremierInsights_Report.pdf" target="_blank">Project Report (PDF)</a></p>
             </div>
 
-            <div class="project-card">
+            <div class="project-card" onclick="location.href='projects/music-genre-classification.html'">
                 <h2>🎵 Music Genre Classifier</h2>
                 <p>
                     Designed a classifier leveraging machine learning and deep learning to categorize songs into genres. 
@@ -66,15 +75,15 @@
                     Models such as KNN, Logistic Regression, ANN, and CNN were trained and evaluated on the GTZAN dataset (10 genres, 100 samples each).
                 </p>
                 <p><b>Technologies & Skills:</b> Python, Audio Processing, CNN, RNN, TensorFlow</p>
-                <p><a href="https://github.com/Mehul-Ag20/Music_Genre_Classification" target="_blank">GitHub Repository</a> | <a href="assets/documents/Music_Genre_Classification_Report.pdf" target="_blank">Project Report (PDF)</a></p>
             </div>
+
         </section>
     </main>
 
     <footer>
         <div class="container">
             <div class="footer-content">
-                <p>Contact me at <a href="mailto:rahul22392@iiitd.ac.in" class="footer__link">rahul22392@iiitd.ac.in</a></p>
+                <p>Contact me at <a href="mailto:rahul.omalur14@gmail.com" class="footer__link">rahul.omalur14@gmail.com</a></p>
                 <div class="social-links">
                     <a href="https://github.com/Rahul14052004" target="_blank" class="footer__link">GitHub</a>
                     <a href="https://www.linkedin.com/in/rahul-omalur-1a7716285/" target="_blank" class="footer__link">LinkedIn</a>

@@ -11,7 +11,8 @@
 </head>
 <body>
     <header>
-        <div class="container">
+        <div class="container header-center">
+            <img src="assets/img/profile_photo.jpg" alt="Rahul Ramesh Omalur" class="header-profile-pic" />
             <h1>Rahul Ramesh Omalur</h1>
             <p>CSAI Undergraduate | Passionate about ML, Music, Sports, and Movies</p>
             <nav class="main-nav">
@@ -22,15 +23,12 @@
             </nav>
         </div>
     </header>
-
+    
     <main class="container">
         <!-- About Me Section -->
         <section class="index-layout about">
             <h2>About Me</h2>
             <div class="about-content">
-                <div class="about-image">
-                    <img src="assets/images/profile.jpg" alt="Rahul Ramesh Omalur" />
-                </div>
                 <div class="about-text">
                     <p>
                         I enjoy building machine learning models, developing applications, and exploring how technology intersects 
@@ -50,7 +48,7 @@
             <h2>Education</h2>
             <div class="education-card">
                 <div class="education-item">
-                    <img src="assets/images/iiitd_logo.png" alt="IIIT Delhi Logo" class="education-logo"/>
+                    <img src="assets/img/iiitd_logo.png" alt="IIIT Delhi Logo" class="education-logo"/>
                     <div>
                         <h3>Bachelor of Technology - BTech, Artificial Intelligence</h3>
                         <p>Indraprastha Institute of Information Technology, Delhi · Nov 2022 - Jul 2026</p>
@@ -59,7 +57,7 @@
                     </div>
                 </div>
                 <div class="education-item">
-                    <img src="assets/images/geetanjali_logo.png" alt="Geetanjali Olympiad School Logo" class="education-logo"/>
+                    <img src="assets/img/geetanjali_logo.png" alt="Geetanjali Olympiad School Logo" class="education-logo"/>
                     <div>
                         <h3>CBSE, Computer Science</h3>
                         <p>Geetanjali Olympiad School, India · 2020 - 2022</p>
@@ -67,7 +65,7 @@
                     </div>
                 </div>
                 <div class="education-item">
-                    <img src="assets/images/dps_logo.png" alt="Delhi Public School Logo" class="education-logo"/>
+                    <img src="assets/img/dps_logo.png" alt="Delhi Public School Logo" class="education-logo"/>
                     <div>
                         <h3>CBSE, Computer Science</h3>
                         <p>Delhi Public School, India · 2010 - 2020</p>
@@ -77,12 +75,82 @@
             </div>
         </section>
 
+<!-- Experience Section -->
+<section class="index-layout experience">
+    <h2>Experience</h2>
+    <div class="timeline">
+  
+      <!-- CodePlex -->
+      <div class="timeline-item left">
+        <div class="timeline-content">
+          <h3>CodePlex Technologies Pvt. Ltd.</h3>
+          <span class="role">Software Engineer Intern · Bangalore, India</span>
+          <span class="date">May 2024 – Jul 2024</span>
+          <div class="details">
+            <ul>
+              <li>Assisted in migrating obituary-related data from legacy websites using PHP Laravel and Simple HTML DOM Parser.</li>
+              <li>Resolved anomalies in the AutoImporter tool to ensure accurate structured data transfer for Tribute Technologies Ltd.</li>
+              <li>Worked on improving automation and system integrity using MySQL and Laravel.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+  
+      <!-- SBILab -->
+      <div class="timeline-item right">
+        <div class="timeline-content">
+          <h3>SBILab, IIIT-Delhi</h3>
+          <span class="role">Undergraduate Researcher</span>
+          <span class="date">Jul 2024 – May 2025</span>
+          <div class="details">
+            <div class="project-subitem">
+              <p><b>AI/ML-Aided Cardiovascular Disease Prediction</b> | PyTorch, NeuroKit, ECG, GNN <br>
+                <i>Jul 2024 – Sept 2024</i></p>
+              <ul>
+                <li>Designed deep learning models including Graph Neural Networks to classify cardiovascular diseases using 12-lead ECG signals.</li>
+                <li>Collaborated under Prof. Anubha Gupta at SBILab to extract medical insights and evaluate model performance.</li>
+              </ul>
+            </div>
+  
+            <div class="project-subitem">
+              <p><b>Automatic Music Transcription (BTP)</b> | CNN, GRU, GNN, GATConv, PyTorch <br>
+                <i>Sept 2024 – May 2025</i></p>
+              <ul>
+                <li>Developed PolyGraphAMT and GAT-AMT models using CNN-GRU encoders and GNN-based decoders with GATConv layers.</li>
+                <li>Captured temporal, pitch, and polyphonic relationships in piano music transcription.</li>
+                <li>Achieved competitive accuracy against baselines like Transkun and Kong using mel-spectrogram input features.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <!-- TCS -->
+      <div class="timeline-item left">
+        <div class="timeline-content">
+          <h3>TCS Research & Innovation</h3>
+          <span class="role">Machine Learning Intern · Thane, India</span>
+          <span class="date">May 2025 – Jul 2025</span>
+          <div class="details">
+            <ul>
+              <li>Preprocessed and analyzed ECG signals and patient metadata using Pandas, scikit-learn, and PyTorch.</li>
+              <li>Built predictive models to assess Coronary Artery Disease (CAD) risk in Indian patients using clinical datasets from hospitals across India.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+  
+    </div>
+  </section>
+  
+
+
         <!-- Volunteering Section -->
         <section class="index-layout volunteering">
             <h2>Volunteering</h2>
             <div class="volunteer-card">
                 <div class="volunteer-header">
-                    <img src="assets/images/nss_upes_logo.png" alt="NSS UPES Logo" class="volunteer-logo"/>
+                    <img src="assets/img/nss_logo.png" alt="NSS UPES Logo" class="volunteer-logo"/>
                     <div>
                         <h3>Volunteer</h3>
                         <p>NSS UPES · Jan 2025 - May 2025 · 5 months</p>
@@ -103,7 +171,7 @@
     <footer>
         <div class="container">
             <div class="footer-content">
-                <p>Contact me at <a href="mailto:rahul22392@iiitd.ac.in" class="footer__link">rahul22392@iiitd.ac.in</a></p>
+                <p>Contact me at <a href="mailto:rahul.omalur14@gmail.com" class="footer__link">rahul.omalur14@gmail.com</a></p>
                 <div class="social-links">
                     <a href="https://github.com/Rahul14052004" target="_blank" class="footer__link">GitHub</a>
                     <a href="https://linkedin.com/in/rahul-ramesh-omalur" target="_blank" class="footer__link">LinkedIn</a>
