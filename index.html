@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rahul Ramesh Omalur</title>
+    <title>Rahul's Portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
@@ -21,6 +21,16 @@
             --text-light: #666666;
             --border: #e5e5e5;
             --accent: #000000;
+            --card-bg: #fafafa;
+        }
+
+        [data-theme="dark"] {
+            --bg: #0a0a0a;
+            --text: #e5e5e5;
+            --text-light: #a0a0a0;
+            --border: #2a2a2a;
+            --accent: #ffffff;
+            --card-bg: #1a1a1a;
         }
 
         html {
@@ -33,6 +43,7 @@
             color: var(--text);
             line-height: 1.6;
             -webkit-font-smoothing: antialiased;
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
 
         .container {
@@ -98,6 +109,51 @@
             padding: 1rem 0;
             margin-bottom: 4rem;
             z-index: 100;
+            transition: background-color 0.3s ease;
+        }
+
+        [data-theme="dark"] nav {
+            background: rgba(10, 10, 10, 0.95);
+        }
+
+        /* Dark Mode Toggle */
+        .theme-toggle {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: var(--accent);
+            border: 2px solid var(--border);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: var(--bg);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            z-index: 9999;
+        }
+
+        .theme-toggle:hover {
+            transform: scale(1.15) rotate(15deg);
+            box-shadow: 0 6px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        .theme-toggle:active {
+            transform: scale(0.95);
+        }
+
+        @media (max-width: 768px) {
+            .theme-toggle {
+                bottom: 1.5rem;
+                right: 1.5rem;
+                width: 50px;
+                height: 50px;
+                font-size: 1.25rem;
+            }
         }
 
         nav ul {
@@ -185,7 +241,7 @@
         }
 
         .education-item:hover {
-            background: #fafafa;
+            background: var(--card-bg);
             transform: translateX(4px);
         }
 
@@ -233,7 +289,7 @@
         }
 
         .timeline-item:hover {
-            background: #fafafa;
+            background: var(--card-bg);
         }
 
         .timeline-item:last-child {
@@ -292,7 +348,7 @@
 
         /* Projects */
         .project-card {
-            background: #fafafa;
+            background: var(--card-bg);
             padding: 2rem;
             border-radius: 8px;
             margin-bottom: 2rem;
@@ -303,6 +359,10 @@
         .project-card:hover {
             transform: translateY(-2px);
             box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+        }
+
+        [data-theme="dark"] .project-card:hover {
+            box-shadow: 0 8px 24px rgba(255, 255, 255, 0.05);
         }
 
         .project-card h3 {
@@ -398,7 +458,7 @@
         .resume-download {
             text-align: center;
             padding: 3rem;
-            background: #fafafa;
+            background: var(--card-bg);
             border-radius: 8px;
             border: 1px solid var(--border);
         }
@@ -408,7 +468,7 @@
             align-items: center;
             gap: 0.5rem;
             background: var(--accent);
-            color: white;
+            color: var(--bg);
             padding: 1rem 2rem;
             text-decoration: none;
             border-radius: 6px;
@@ -418,7 +478,7 @@
         }
 
         .resume-btn:hover {
-            background: #333;
+            opacity: 0.9;
             transform: translateY(-1px);
         }
 
@@ -469,7 +529,7 @@
         <div class="container">
             <img src="assets/img/profile_photo.png" alt="Rahul Ramesh Omalur" class="profile-img">
             <h1>Rahul Ramesh Omalur</h1>
-            <p class="subtitle">CSAI Undergraduate · ML Engineer</p>
+            <p class="subtitle">CSAI Undergraduate · Machine Learning · Music · Sports</p>
             <div class="social-links">
                 <a href="mailto:rahul.omalur14@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
                 <a href="https://github.com/rahulomalur" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
@@ -576,7 +636,7 @@
                     </div>
                 </div>
 
-                <div class="timeline-item" onclick="window.open('https://www.codeplex.in', '_blank')">
+                <div class="timeline-item" onclick="window.open('https://linkedin.com/in/rahul-omalur', '_blank')">
                     <h3>CodePlex Technologies Pvt. Ltd.</h3>
                     <span class="role">Software Engineer Intern · Bangalore, India</span>
                     <span class="date">May 2024 – Jul 2024</span>
@@ -629,10 +689,6 @@
                     View on GitHub <i class="fas fa-external-link-alt"></i>
                 </a>
             </div>
-
-            <a href="https://github.com/rahulomalur" target="_blank">
-              More At <i class="fas fa-external-link-alt"></i>
-          </a>
         </section>
 
         <!-- Skills -->
@@ -680,8 +736,8 @@
                             <span class="tooltip">Hugging Face</span>
                         </div>
                         <div class="skill-icon">
-                            <img src="assets/img/skills/ollama.png" alt="LLMs">
-                            <span class="tooltip">oLLaMa</span>
+                            <img src="assets/img/skills/llm.png" alt="LLMs">
+                            <span class="tooltip">LLMs</span>
                         </div>
                     </div>
                 </div>
@@ -722,8 +778,8 @@
                             <span class="tooltip">PostgreSQL</span>
                         </div>
                         <div class="skill-icon">
-                            <img src="assets/img/skills/celery.png" alt="Redis">
-                            <span class="tooltip">Celery</span>
+                            <img src="assets/img/skills/redis.png" alt="Redis">
+                            <span class="tooltip">Redis</span>
                         </div>
                     </div>
                 </div>
@@ -749,7 +805,39 @@
         </div>
     </footer>
 
+    <!-- Dark Mode Toggle Button -->
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+        <i class="fas fa-moon"></i>
+    </button>
+
     <script>
+        // Dark Mode Toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const html = document.documentElement;
+        const icon = themeToggle.querySelector('i');
+
+        // Check for saved theme preference or default to light mode
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        html.setAttribute('data-theme', currentTheme);
+        updateIcon(currentTheme);
+
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = html.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            
+            html.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateIcon(newTheme);
+        });
+
+        function updateIcon(theme) {
+            if (theme === 'dark') {
+                icon.className = 'fas fa-sun';
+            } else {
+                icon.className = 'fas fa-moon';
+            }
+        }
+
         // Highlight active section in navigation
         const sections = document.querySelectorAll('section');
         const navLinks = document.querySelectorAll('nav a');
