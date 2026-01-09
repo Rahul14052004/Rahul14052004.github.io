@@ -3,211 +3,775 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rahul Ramesh Omalur | Portfolio</title>
+    <title>Rahul Ramesh Omalur</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg: #ffffff;
+            --text: #111111;
+            --text-light: #666666;
+            --border: #e5e5e5;
+            --accent: #000000;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Header */
+        header {
+            padding: 6rem 0 4rem;
+            text-align: center;
+        }
+
+        .profile-img {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 2rem;
+            border: 2px solid var(--accent);
+        }
+
+        h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.03em;
+        }
+
+        .subtitle {
+            color: var(--text-light);
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        .social-links a {
+            color: var(--text-light);
+            font-size: 1.4rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        /* Navigation */
+        nav {
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            padding: 1rem 0;
+            margin-bottom: 4rem;
+            z-index: 100;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2.5rem;
+        }
+
+        nav a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+        }
+
+        nav a.active {
+            color: var(--accent);
+        }
+
+        nav a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -1rem;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--accent);
+        }
+
+        /* Sections */
+        section {
+            padding: 4rem 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        section:last-of-type {
+            border-bottom: none;
+        }
+
+        h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            font-weight: 600;
+        }
+
+        h3 {
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        p {
+            color: var(--text-light);
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+
+        /* About */
+        .about-text {
+            max-width: 650px;
+            margin: 0 auto;
+        }
+
+        /* Education */
+        .education-item {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+            padding-bottom: 2.5rem;
+            border-bottom: 1px solid var(--border);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-left: -1.5rem;
+            margin-right: -1.5rem;
+        }
+
+        .education-item:hover {
+            background: #fafafa;
+            transform: translateX(4px);
+        }
+
+        .education-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+
+        .education-logo {
+            width: 60px;
+            height: 60px;
+            object-fit: contain;
+            flex-shrink: 0;
+        }
+
+        .education-item p {
+            font-size: 0.95rem;
+        }
+
+        /* Experience Timeline */
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--border);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 3rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-radius: 8px;
+            padding: 1rem;
+            margin-left: -1rem;
+            margin-right: -1rem;
+        }
+
+        .timeline-item:hover {
+            background: #fafafa;
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2.4rem;
+            top: 0.4rem;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--accent);
+            border: 2px solid var(--bg);
+        }
+
+        .role {
+            display: block;
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .date {
+            display: block;
+            color: var(--text-light);
+            font-size: 0.85rem;
+            margin-bottom: 1rem;
+        }
+
+        .details ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .details li {
+            padding-left: 1.5rem;
+            margin-bottom: 0.5rem;
+            position: relative;
+        }
+
+        .details li::before {
+            content: '—';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+        }
+
+        .project-subitem {
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border);
+        }
+
+        /* Projects */
+        .project-card {
+            background: #fafafa;
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+        }
+
+        .project-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .project-card a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .project-card a:hover {
+            text-decoration: underline;
+        }
+
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+        }
+
+        .skill-category h3 {
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .skill-icons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+
+        .skill-icon {
+            position: relative;
+            cursor: pointer;
+        }
+
+        .skill-icon img {
+            width: 48px;
+            height: 48px;
+            object-fit: contain;
+            transition: all 0.3s ease;
+        }
+
+        .skill-icon:hover img {
+            transform: translateY(-4px) scale(1.1);
+        }
+
+        .skill-icon .tooltip {
+            position: absolute;
+            bottom: -2.5rem;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--accent);
+            color: white;
+            padding: 0.4rem 0.8rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+            font-family: var(--font-main);
+        }
+
+        .skill-icon .tooltip::before {
+            content: '';
+            position: absolute;
+            top: -4px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-left: 4px solid transparent;
+            border-right: 4px solid transparent;
+            border-bottom: 4px solid var(--accent);
+        }
+
+        .skill-icon:hover .tooltip {
+            opacity: 1;
+        }
+
+        /* Resume Download */
+        .resume-download {
+            text-align: center;
+            padding: 3rem;
+            background: #fafafa;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+        }
+
+        .resume-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--accent);
+            color: white;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+
+        .resume-btn:hover {
+            background: #333;
+            transform: translateY(-1px);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 4rem 0 3rem;
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1.5rem;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            nav ul {
+                gap: 1.5rem;
+                flex-wrap: wrap;
+            }
+
+            .education-item {
+                flex-direction: column;
+            }
+
+            .timeline {
+                padding-left: 1.5rem;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
+    <!-- Header -->
     <header>
-        <div class="container header-center">
-            <!-- <img src="assets/img/profile_photo.jpg" alt="Rahul Ramesh Omalur" class="header-profile-pic" /> -->
+        <div class="container">
+            <img src="assets/img/profile_photo.jpg" alt="Rahul Ramesh Omalur" class="profile-img">
             <h1>Rahul Ramesh Omalur</h1>
-            <p>CSAI Undergraduate | Passionate about ML, Music, Sports, and Movies</p>
-            <nav class="main-nav">
-                <a href="index.html" class="nav-link active">Home</a>
-                <a href="projects.html" class="nav-link">Projects</a>
-                <a href="hobbies.html" class="nav-link">Hobbies</a>
-                <a href="resume.html" class="nav-link">Resume</a>
-            </nav>
+            <p class="subtitle">CSAI Undergraduate · Machine Learning · Music · Sports</p>
+            <div class="social-links">
+                <a href="mailto:rahul.omalur14@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                <a href="https://github.com/rahulomalur" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://linkedin.com/in/rahul-omalur" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            </div>
         </div>
     </header>
-    
+
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#resume">Resume</a></li>
+            </ul>
+        </div>
+    </nav>
+
     <main class="container">
-        <!-- About Me Section -->
-        <section class="index-layout about">
-            <h2>About Me</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>
-                        I enjoy building machine learning models, developing applications, and exploring how technology intersects 
-                        with my interests in music, sports, and movies. My work spans across various domains including artificial 
-                        intelligence, data science, and software development.
-                    </p>
-                    <p>
-                        Currently pursuing my undergraduate degree in Computer Science and Artificial Intelligence, I'm passionate 
-                        about creating innovative solutions and exploring the endless possibilities that technology offers.
-                    </p>
-                </div>
+        <!-- About -->
+        <section id="about">
+            <h2>About</h2>
+            <div class="about-text">
+                <p>
+                    I enjoy building machine learning models, developing applications, and exploring how technology intersects 
+                    with my interests in music, sports, and movies. My work spans across various domains including artificial 
+                    intelligence, data science, and software development.
+                </p>
+                <p>
+                    Currently pursuing my undergraduate degree in Computer Science and Artificial Intelligence at IIIT Delhi, 
+                    I'm passionate about creating innovative solutions and exploring the endless possibilities that technology offers.
+                </p>
             </div>
         </section>
 
-        <!-- Education Section -->
-        <section class="index-layout education">
+        <!-- Education -->
+        <section id="education">
             <h2>Education</h2>
-            <div class="education-card">
-                <div class="education-item">
-                    <img src="assets/img/iiitd_logo.png" alt="IIIT Delhi Logo" class="education-logo"/>
-                    <div>
-                        <h3>Bachelor of Technology - BTech, Artificial Intelligence</h3>
-                        <p>Indraprastha Institute of Information Technology, Delhi · Nov 2022 - Jul 2026</p>
-                        <p>Grade: 8.69 CGPA</p>
-                        <p><b>Skills:</b> Computer Science · Artificial Intelligence (AI) · Data Science · Data Visualization · Deep Learning · Machine Learning Algorithms · Jupyter Notebook</p>
+            <div class="education-item" onclick="window.open('https://iiitd.ac.in', '_blank')">
+                <img src="assets/img/iiitd_logo.png" alt="IIIT Delhi" class="education-logo">
+                <div>
+                    <h3>Bachelor of Technology - Artificial Intelligence</h3>
+                    <p>Indraprastha Institute of Information Technology, Delhi</p>
+                    <p>Nov 2022 - Jul 2026 · CGPA: 8.69</p>
+                </div>
+            </div>
+            <div class="education-item" onclick="window.open('https://www.geetanjalischool.in', '_blank')">
+                <img src="assets/img/geetanjali_logo.png" alt="Geetanjali" class="education-logo">
+                <div>
+                    <h3>CBSE - Computer Science</h3>
+                    <p>Geetanjali Olympiad School, India</p>
+                    <p>2020 - 2022 · Grade: 95%</p>
+                </div>
+            </div>
+            <div class="education-item" onclick="window.open('https://east.dpsbangalore.edu.in/', '_blank')">
+                <img src="assets/img/dps_logo.png" alt="DPS" class="education-logo">
+                <div>
+                    <h3>CBSE - Computer Science</h3>
+                    <p>Delhi Public School, India</p>
+                    <p>2010 - 2020 · Grade: 92%</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience -->
+        <section id="experience">
+            <h2>Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item" onclick="window.open('https://www.tcs.com/what-we-do/research', '_blank')">
+                    <h3>TCS Research & Innovation</h3>
+                    <span class="role">Machine Learning Intern · Thane, India</span>
+                    <span class="date">May 2025 – Jul 2025</span>
+                    <div class="details">
+                        <ul>
+                            <li>Preprocessed and analyzed ECG signals and patient metadata using Pandas, scikit-learn, and PyTorch</li>
+                            <li>Built predictive models to assess Coronary Artery Disease (CAD) risk in Indian patients</li>
+                        </ul>
                     </div>
                 </div>
-                <div class="education-item">
-                    <img src="assets/img/geetanjali_logo.png" alt="Geetanjali Olympiad School Logo" class="education-logo"/>
-                    <div>
-                        <h3>CBSE, Computer Science</h3>
-                        <p>Geetanjali Olympiad School, India · 2020 - 2022</p>
-                        <p>Grade: 95%</p>
+
+                <div class="timeline-item" onclick="window.open('https://sbilab.iiitd.edu.in', '_blank')">
+                    <h3>SBILab, IIIT-Delhi</h3>
+                    <span class="role">Undergraduate Researcher</span>
+                    <span class="date">Jul 2024 – May 2025</span>
+                    <div class="details">
+                        <div class="project-subitem">
+                            <p><strong>Automatic Music Transcription (BTP)</strong></p>
+                            <ul>
+                                <li>Developed PolyGraphAMT and GAT-AMT models using CNN-GRU encoders and GNN-based decoders</li>
+                                <li>Achieved competitive accuracy against baselines like Transkun and Kong</li>
+                            </ul>
+                        </div>
+                        <div class="project-subitem">
+                            <p><strong>AI/ML-Aided Cardiovascular Disease Prediction</strong></p>
+                            <ul>
+                                <li>Designed deep learning models including Graph Neural Networks for ECG classification</li>
+                                <li>Collaborated under Prof. Anubha Gupta at SBILab</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-                <div class="education-item">
-                    <img src="assets/img/dps_logo.png" alt="Delhi Public School Logo" class="education-logo"/>
-                    <div>
-                        <h3>CBSE, Computer Science</h3>
-                        <p>Delhi Public School, India · 2010 - 2020</p>
-                        <p>Grade: 92%</p>
+
+                <div class="timeline-item" onclick="window.open('https://www.codeplex.in', '_blank')">
+                    <h3>CodePlex Technologies Pvt. Ltd.</h3>
+                    <span class="role">Software Engineer Intern · Bangalore, India</span>
+                    <span class="date">May 2024 – Jul 2024</span>
+                    <div class="details">
+                        <ul>
+                            <li>Migrated obituary-related data from legacy websites using PHP Laravel</li>
+                            <li>Resolved anomalies in AutoImporter tool for Tribute Technologies Ltd.</li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </section>
 
-<!-- Experience Section -->
-<section class="index-layout experience">
-    <h2>Experience</h2>
-    <div class="timeline">
-  
-      <!-- CodePlex -->
-      <div class="timeline-item left">
-        <div class="timeline-content">
-          <h3>CodePlex Technologies Pvt. Ltd.</h3>
-          <span class="role">Software Engineer Intern · Bangalore, India</span>
-          <span class="date">May 2024 – Jul 2024</span>
-          <div class="details">
-            <ul>
-              <li>Assisted in migrating obituary-related data from legacy websites using PHP Laravel and Simple HTML DOM Parser.</li>
-              <li>Resolved anomalies in the AutoImporter tool to ensure accurate structured data transfer for Tribute Technologies Ltd.</li>
-              <li>Worked on improving automation and system integrity using MySQL and Laravel.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-  
-      <!-- SBILab -->
-      <div class="timeline-item right">
-        <div class="timeline-content">
-          <h3>SBILab, IIIT-Delhi</h3>
-          <span class="role">Undergraduate Researcher</span>
-          <span class="date">Jul 2024 – May 2025</span>
-          <div class="details">
-            <div class="project-subitem">
-              <p><b>AI/ML-Aided Cardiovascular Disease Prediction</b> | PyTorch, NeuroKit, ECG, GNN <br>
-                <i>Jul 2024 – Sept 2024</i></p>
-              <ul>
-                <li>Designed deep learning models including Graph Neural Networks to classify cardiovascular diseases using 12-lead ECG signals.</li>
-                <li>Collaborated under Prof. Anubha Gupta at SBILab to extract medical insights and evaluate model performance.</li>
-              </ul>
+        <!-- Projects -->
+        <section id="projects">
+            <h2>Projects</h2>
+            
+            <div class="project-card">
+                <h3>QUADRA: A Counterspeech Generation Model</h3>
+                <p>Co-developed an intent-conditioned counterspeech generation framework leveraging HateBERT and BART. Implemented fusion techniques to integrate hate speech and intent embeddings, achieving superior performance across multiple NLP metrics.</p>
+                <p><strong>Tech:</strong> LLMs, Fine-Tuning, Hugging Face, NLP</p>
+                <a href="https://github.com/NLP-2025/NLP-Project-CounterSpeech" target="_blank">
+                    View on GitHub <i class="fas fa-external-link-alt"></i>
+                </a>
             </div>
-  
-            <div class="project-subitem">
-              <p><b>Automatic Music Transcription (BTP)</b> | CNN, GRU, GNN, GATConv, PyTorch <br>
-                <i>Sept 2024 – May 2025</i></p>
-              <ul>
-                <li>Developed PolyGraphAMT and GAT-AMT models using CNN-GRU encoders and GNN-based decoders with GATConv layers.</li>
-                <li>Captured temporal, pitch, and polyphonic relationships in piano music transcription.</li>
-                <li>Achieved competitive accuracy against baselines like Transkun and Kong using mel-spectrogram input features.</li>
-              </ul>
+
+            <div class="project-card">
+                <h3>SmartReachAI: Email Campaign Management System</h3>
+                <p>Developed an AI-driven email automation platform integrating Mistral and Gemma in a RAG framework. Built scalable backend with Send Time Optimization powered by XGBoost and modern Next.js frontend.</p>
+                <p><strong>Tech:</strong> Django, Next.js, LLMs, RAG, XGBoost, Celery, Redis</p>
+                <a href="https://github.com/SDOS-2025/SmartReach-AI" target="_blank">
+                    View on GitHub <i class="fas fa-external-link-alt"></i>
+                </a>
             </div>
-          </div>
-        </div>
-      </div>
-  
-      <!-- TCS -->
-      <div class="timeline-item left">
-        <div class="timeline-content">
-          <h3>TCS Research & Innovation</h3>
-          <span class="role">Machine Learning Intern · Thane, India</span>
-          <span class="date">May 2025 – Jul 2025</span>
-          <div class="details">
-            <ul>
-              <li>Preprocessed and analyzed ECG signals and patient metadata using Pandas, scikit-learn, and PyTorch.</li>
-              <li>Built predictive models to assess Coronary Artery Disease (CAD) risk in Indian patients using clinical datasets from hospitals across India.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-  
-    </div>
-  </section>
-  
 
+            <div class="project-card">
+                <h3>Robo Bartender: AI-Driven Autonomous Bartending System</h3>
+                <p>Intelligent robotic bartender combining computer vision, NLP, and robotic manipulation to create cocktails through voice commands. Integrates real-time speech recognition and AI-powered conversation.</p>
+                <p><strong>Tech:</strong> LLMs, Groq Inference, ROS, Cobot Arms</p>
+                <a href="https://github.com/Vikranth3140/Robo-Bartender" target="_blank">
+                    View on GitHub <i class="fas fa-external-link-alt"></i>
+                </a>
+            </div>
 
-        <!-- Volunteering Section -->
-        <section class="index-layout volunteering">
-            <h2>Positions of Responsibility</h2>
-            <div class="volunteer-card">
-                <div class="volunteer-header">
-                    <img src="assets/img/audiobytes.png" alt="NSS UPES Logo" class="volunteer-logo"/>
-                    <div>
-                        <h3>Co-ordinator</h3>
-                        <p>Audiobytes · Nov 2025 - Present </p>
-                    </div>
-                </div>
-                <div class="volunteer-body">
-                    <p>
-                        As one of the co-ordinators of Audiobytes, the official music club of IIIT-Delhi, I lead a team of passionate individuals dedicated to hosting music-related activities and events on campus. 
-                        My role involves organizing workshops, events, and collaborative projects that foster creativity and innovation in music. 
-                         
-                    </p>
-                </div>
-                <div class="volunteer-header">
-                  <img src="assets/img/cyfuse.png" alt="NSS UPES Logo" class="volunteer-logo"/>
-                  <div>
-                      <h3>Member</h3>
-                      <p>Cyfuse · Mar 2023 - Jul 2023 · 4 months</p>
-                  </div>
-              </div>
-              <div class="volunteer-body">
-                  <p>
-                    I worked on the CyFuse technical team to build core engineering projects and create project documentation. I also handled logistics and technical setup for major college fest events, coordinating with different teams to make sure everything ran smoothly. This role allowed me to combine my technical skills with event leadership to support our college's tech community.
-                  </p>
-              </div>
-              </div>
-                <div class="volunteer-header">
-                  <img src="assets/img/nss_logo.png" alt="NSS UPES Logo" class="volunteer-logo"/>
-                  <div>
-                      <h3>Volunteer</h3>
-                      <p>NSS · Jan 2025 - May 2025 · 5 months</p>
-                  </div>
-              </div>
-              <div class="volunteer-body">
-                  <p>
-                      Grateful to have successfully completed 80 hours of community service with NSS at IIIT-Delhi during Winter 2025! 
-                      I engaged in activities such as cleanliness initiatives, mentoring children from underserved communities, 
-                      coordinating educational visits, and contributing to awareness programs. The experience was deeply rewarding and 
-                      enhanced my abilities in collaboration, leadership, and accountability.
-                  </p>
-              </div>
-
-              
+            <div class="project-card">
+                <h3>Probabilistic Pundit: Fantasy Football Dream Team</h3>
+                <p>AI-powered system generating optimized Fantasy Premier League squads using deterministic ranking and multi-agent LLM reasoning. FastAPI backend with Streamlit frontend.</p>
+                <p><strong>Tech:</strong> LLMs, Cloud-Based Inference, Streamlit, FastAPI</p>
+                <a href="https://github.com/Rahul14052004/probabilistic-pundit" target="_blank">
+                    View on GitHub <i class="fas fa-external-link-alt"></i>
+                </a>
+            </div>
         </section>
 
-        
+        <!-- Skills -->
+        <section id="skills">
+            <h2>Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Languages</h3>
+                    <div class="skill-icons">
+                        <div class="skill-icon">
+                            <img src="assets/img/skills/python.png" alt="Python">
+                            <span class="tooltip">Python</span>
+                        </div>
+                        <div class="skill-icon">
+                            <img src="assets/img/skills/java.png" alt="Java">
+                            <span class="tooltip">Java</span>
+                        </div>
+                        <div class="skill-icon">
+                            <img src="assets/img/skills/javascript.png" alt="JavaScript">
+                            <span class="tooltip">JavaScript</span>
+                        </div>
+                        <div class="skill-icon">
+                            <img src="assets/img/skills/sql.png" alt="SQL">
+                            <span class="tooltip">SQL</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>ML/AI</h3>
+                    <div class="skill-icons">
+                        <div class="skill-icon">
+                            <img src="assets/img/skills/pytorch.png" alt="PyTorch">
+                            <span class="tooltip">PyTorch</span>
+                        </div>
+                        <div class="skill-icon">
+                            <img src="assets/img/skills/tensorflow.png" alt="TensorFlow">
+                            <span class="tooltip">TensorFlow</span>
+                        </div>
+                        <div class="skill-icon">
+                            <img src="assets/img/skills/scikit-learn.png" alt="scikit-learn">
+                            <span class="tooltip">scikit-learn</span>
+                        </div>
+                        <div class="skill-icon">
+                            <img src="assets/img/skills/huggingface.png" alt="Hugging Face">
+                            <span class="tooltip">Hugging Face</span>
+                        </div>
+                        <div class="skill-icon">
+                            <img src="assets/img/skills/ollama.png" alt="LLMs">
+                            <span class="tooltip">oLLaMa</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Web Dev</h3>
+                    <div class="skill-icons">
+                        <div class="skill-icon">
+                            <img src="assets/img/skills/django.png" alt="Django">
+                            <span class="tooltip">Django</span>
+                        </div>
+                        <div class="skill-icon">
+                            <img src="assets/img/skills/nextjs.png" alt="Next.js">
+                            <span class="tooltip">Next.js</span>
+                        </div>
+                        <div class="skill-icon">
+                            <img src="assets/img/skills/fastapi.png" alt="FastAPI">
+                            <span class="tooltip">FastAPI</span>
+                        </div>
+                        <div class="skill-icon">
+                            <img src="assets/img/skills/react.png" alt="React">
+                            <span class="tooltip">React</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Tools</h3>
+                    <div class="skill-icons">
+                        <div class="skill-icon">
+                            <img src="assets/img/skills/git.png" alt="Git">
+                            <span class="tooltip">Git</span>
+                        </div>
+                        <div class="skill-icon">
+                            <img src="assets/img/skills/docker.png" alt="Docker">
+                            <span class="tooltip">Docker</span>
+                        </div>
+                        <div class="skill-icon">
+                            <img src="assets/img/skills/postgresql.png" alt="PostgreSQL">
+                            <span class="tooltip">PostgreSQL</span>
+                        </div>
+                        <div class="skill-icon">
+                            <img src="assets/img/skills/celery.png" alt="Redis">
+                            <span class="tooltip">Celery</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Resume -->
+        <section id="resume">
+            <h2>Resume</h2>
+            <div class="resume-download">
+                <p>Download my complete resume for a comprehensive view of my experience and achievements.</p>
+                <a href="assets/css/Rahul_Resume.pdf" class="resume-btn" target="_blank">
+                    <i class="fas fa-download"></i> Download Resume
+                </a>
+            </div>
+        </section>
     </main>
 
+    <!-- Footer -->
     <footer>
         <div class="container">
-            <div class="footer-content">
-                <p>Contact me at <a href="mailto:rahul.omalur14@gmail.com" class="footer__link">rahul.omalur14@gmail.com</a></p>
-                <div class="social-links">
-                    <a href="https://github.com/rahulomalur" target="_blank" class="footer__link">GitHub</a>
-                    <a href="https://linkedin.com/in/rahul-omalur" target="_blank" class="footer__link">LinkedIn</a>
-                </div>
-            </div>
+            <p>&copy; 2026 Rahul Ramesh Omalur. All rights reserved.</p>
         </div>
     </footer>
+
+    <script>
+        // Highlight active section in navigation
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('nav a');
+
+        function highlightNavigation() {
+            let currentSection = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                
+                if (window.pageYOffset >= sectionTop - 150) {
+                    currentSection = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${currentSection}`) {
+                    link.classList.add('active');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', highlightNavigation);
+        window.addEventListener('load', highlightNavigation);
+    </script>
 </body>
 </html>
